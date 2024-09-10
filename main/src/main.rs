@@ -10,6 +10,6 @@ fn main() {
                           // ": u16" lets the compiler what type x is
     let y: u8 = 3;
     println!("x is {}, y is {}",x, y);
-    let z: f32 = x / y as f32;
+    let z: f32 = x / y as f32; // use "as" to type cast
     println!("z is {}",z);
 }
