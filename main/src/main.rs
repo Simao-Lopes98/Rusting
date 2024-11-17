@@ -1,21 +1,20 @@
 /*  
 *
 *
-* Hello World Prog
+* MUltidim Arrays
 *
 *
 */
 fn main() {
 
-    let mut letters: [char; 3] = ['a','b','c'];
-    letters[0] = 'x';
-    let f_letters: char = letters[0];
 
-    println!("{}", f_letters);
+    let parking_lot: [[u8; 3]; 2] = [[1, 2, 3] 
+                                    , [4 ,5 ,6]];
 
-    let numbers: [i32; 5]; //Init empty array of i32 with length 5
-    numbers = [0;5]; //Fill the array wth 0
-    let index: usize = numbers.len();
-    println!("{}",numbers[index]);
+    let number:u8 = parking_lot[1][2];
+
+    println!("Number is {number}");
+
+    let garage: [[[i32; 100]; 20]; 5] = [[[0;100]; 20]; 5]; //3D array initialiez with zeros
 
     }
