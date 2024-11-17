@@ -1,20 +1,21 @@
 /*  
 *
 *
-* MUltidim Arrays
+* Tuples
 *
 *
 */
 fn main() {
 
+    let mut stuff: (i32, f64, char) = (10, 3.14, 'x');
+    let mut f_item: i32 = stuff.0;
+    println!("{f_item}");
 
-    let parking_lot: [[u8; 3]; 2] = [[1, 2, 3] 
-                                    , [4 ,5 ,6]];
+    stuff.0 += 3;
+    f_item = stuff.0;
+    println!("Updated f item: {f_item}");
 
-    let number:u8 = parking_lot[1][2];
+    let (a, b, c) = stuff;
 
-    println!("Number is {number}");
-
-    let garage: [[[i32; 100]; 20]; 5] = [[[0;100]; 20]; 5]; //3D array initialiez with zeros
 
     }
