@@ -1,4 +1,5 @@
 use core::f32;
+use std::result;
 
 /*  
 *
@@ -10,11 +11,8 @@ use core::f32;
 fn main() {
     say_hello();
     say_hello();
-
-    let x:u8 = 1;
-    let y:u8 = 2;
-    say_sum(x, y);
-    say_a_number(x as i32);
+    let y: (i32, i32) = square(13);
+    println!("Result {:?}", y);
     }
 
 fn say_hello() { // Function declaration. Rust doesnt care if there is no prototype.
@@ -30,3 +28,10 @@ fn say_sum(a:u8, b:u8){
     let sum: u8 = a + b;
     println!("Sum {sum}");    
 }
+
+fn square(x:i32) -> (i32, i32) { // Return example
+    println!("Squaring");
+    //x * x // Returns if it is the last line.
+    return (x, x * x);
+}
+
