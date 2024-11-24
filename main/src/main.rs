@@ -10,13 +10,16 @@ use std::usize;
 *
 */
 fn main(){
-    let outer_planet: String;
-    {
-        let inner_planet: String = String::from("Mercury");
-        println!("{inner_planet}");
-        outer_planet = inner_planet; // Passing owernship
-        // println!("{inner_planet}"); // ERROR, as in Rust only there can only be 1 owner at the timewont
-    }
     
-    println!("{outer_planet}");
+    let rocket_fuel: i32 = 1;
+    let ret: u8 = process_fuel(rocket_fuel); // As int is in the stack it wont be modified
+    println!("Rocket fuel {rocket_fuel}");
+
+    
+}
+
+fn process_fuel(mut propellant: i32) -> u8 {
+    propellant += 2;
+    println!("Processing propellant {} ...", propellant);
+    return 15;
 }
