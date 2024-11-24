@@ -10,24 +10,13 @@ use std::usize;
 */
 fn main() {
 
-    let mut count= 0;
-    let letters= ['a','b','c'];
+    let mut matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
 
-    while count < letters.len() {
-        println!("Letters is {}", letters[count]);
-        count += 1;
-    }
-
-    let message: [char; 5] = ['h','e','l','l','o'];
-
-    for (index,&item) in message.iter().enumerate() {//Returns topple
-        println!("item {} is {}", index, item);
-        if item == 'e'{
-            break;
+    for row in matrix.iter_mut() {
+        for num in row.iter_mut() {
+            *num += 10;
+            print!("{num}\t");
         }
-    }
-
-    for number in 0..5 {
-        println!("{}", number);
+        println!();
     }
 }
