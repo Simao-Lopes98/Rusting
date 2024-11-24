@@ -1,20 +1,19 @@
-use core::f32;
-use std::result;
-
 /*  
 *
 *
-* Functions
+* Conditions & Loops
 *
 *
 */
 fn main() {
-    let celsius_temp: f64 = 23.0;
-    let fhar_temp: f64 = celsius_to_fah(celsius_temp);
+    let is_odd: bool = true;
+    let x: i32 = if is_odd {1} else {2}; // One-line if
+    let mut count: i32= 0;
 
-    println!("Converted temp: {}", fhar_temp);
+    loop { // Infinite loop -> CTRL-C to stop
+        count += 1;
+        println!("Count {count}");
+
     }
 
-fn celsius_to_fah(cesl:f64) -> f64{
-    return ((1.8 * cesl) + 32 as f64);
 }
