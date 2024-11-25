@@ -8,14 +8,15 @@ use std::usize;
 */
 fn main(){
     
-    let rocket_fuel: String = String::from("RP-1");
-    let length: usize = process_fuel(&rocket_fuel); // Ownership is not lost
+    let mut rocket_fuel: String = String::from("RP-1");
+    let length: usize = process_fuel(&mut rocket_fuel); // Ownership is not lost
     println!("Rocket fuel {rocket_fuel} {length}");
    
 }
 
-fn process_fuel(propellant: &String) -> usize { // & borrowing
+fn process_fuel(propellant: &mut String) -> usize { // Mutable reference
     println!("Processing propellant {} ...", propellant);
+    propellant.push_str(" is highly flammable");
     let length = propellant.len();
     return length;
 }
