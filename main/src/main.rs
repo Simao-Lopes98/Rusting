@@ -11,15 +11,14 @@ use std::usize;
 */
 fn main(){
     
-    let rocket_fuel: i32 = 1;
-    let ret: u8 = process_fuel(rocket_fuel); // As int is in the stack it wont be modified
+    let rocket_fuel: String = String::from("RP-1");
+    let ret: u8 = process_fuel(rocket_fuel.clone()); //Without clone. Ownership will be lost
     println!("Rocket fuel {rocket_fuel}");
 
     
 }
 
-fn process_fuel(mut propellant: i32) -> u8 {
-    propellant += 2;
+fn process_fuel(propellant: String) -> u8 {
     println!("Processing propellant {} ...", propellant);
     return 15;
 }
