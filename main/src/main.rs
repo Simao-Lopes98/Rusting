@@ -3,22 +3,19 @@ use std::usize;
 
 /*  
 *
-* Ownership - Varaibles are responsible for freeing their own resources
-* Stack and Heap Memory
-*
-*  
+* References
 *
 */
 fn main(){
     
     let rocket_fuel: String = String::from("RP-1");
-    let ret: u8 = process_fuel(rocket_fuel.clone()); //Without clone. Ownership will be lost
-    println!("Rocket fuel {rocket_fuel}");
-
-    
+    let length: usize = process_fuel(&rocket_fuel); // Ownership is not lost
+    println!("Rocket fuel {rocket_fuel} {length}");
+   
 }
 
-fn process_fuel(propellant: String) -> u8 {
+fn process_fuel(propellant: &String) -> usize { // & borrowing
     println!("Processing propellant {} ...", propellant);
-    return 15;
+    let length = propellant.len();
+    return length;
 }
