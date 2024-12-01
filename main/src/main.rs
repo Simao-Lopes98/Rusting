@@ -3,20 +3,15 @@ use std::usize;
 
 /*  
 *
-* References
+* References - Slices
 *
 */
 fn main(){
     
-    let mut rocket_fuel: String = String::from("RP-1");
-    let length: usize = process_fuel(&mut rocket_fuel); // Ownership is not lost
-    println!("Rocket fuel {rocket_fuel} {length}");
-   
-}
+   let message: String = String::from("Greetings from Earth!");
+   println!("Message is: {message}");
 
-fn process_fuel(propellant: &mut String) -> usize { // Mutable reference
-    println!("Processing propellant {} ...", propellant);
-    propellant.push_str(" is highly flammable");
-    let length = propellant.len();
-    return length;
+   let last_word: &str = &message[15..15+50];// Slice
+   println!("Last word is {last_word}");
+
 }
